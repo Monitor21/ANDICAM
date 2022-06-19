@@ -1,0 +1,24 @@
+
+mkdir test
+cd test
+git  clone --single-branch https://github.com/Monitor21/ANDICAM.git
+git checkout -b main 
+cd ANDICAM    (NOTE remote github ANDICAM CONTAINS FOLDERS starCATs usedfits/Iband usedfits/Jband)
+cp  /Volumes/MachHD2/Users/mmessine/MONtmp/github/starCATs/*  starCATs/.
+cp  /Volumes/MachHD2/Users/mmessine/MONtmp/github/usedfits/Iband/*  usedfits/Iband/.
+cp  /Volumes/MachHD2/Users/mmessine/MONtmp/github/usedfits/Jband/*  usedfits/Jband/.
+git checkout -b main 
+git add . 
+git commit -m "My first File"
+git remote add origin https://github.com/Monitor21/ANDICAM.git
+git push  
+
+
+#####################################################################
+git init
+git add .
+git remote add  origin https://github.com/Monitor21/ANDICAM.git
+
+git remote add -f usedfits-upstream Monitor21@github.com:ANDICAM/usedfits.git
+git checkout -b upstream/usedfits usedfits-upstream/master
+git subtree add --prefix=usedfits-template --squash merging/usedfits
